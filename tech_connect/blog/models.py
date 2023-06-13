@@ -10,14 +10,21 @@ class Topic(models.Model):
     class Meta():
         db_table = 'topic'
 
+    def __str__(self):
+        return self.name
+
 class Blog(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    topic = models.OneToOneField(Topic, on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, default='My Blog')
     image = models.ImageField(upload_to='blog')
 
     class Meta():
         db_table = 'blog'
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
 
@@ -27,6 +34,9 @@ class Post(models.Model):
     class Meta():
         db_table = 'post'
 
+    def __str__(self):
+        return self.blog.name
+
 class Coment(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -35,3 +45,6 @@ class Coment(models.Model):
 
     class Meta():
         db_table = 'coment'
+
+    def __str__(self):
+        return self.post
