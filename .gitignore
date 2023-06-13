@@ -1,0 +1,14 @@
+# Pipfiles
+Pipfile
+Pipfile.lock
+
+# Static files 
+tech_connect/core/static/
+
+# Media files 
+tech_connect/media/
+
+# Migrations
+tech_connect/core/migrations/
+tech_connect/registration/migrations/
+
