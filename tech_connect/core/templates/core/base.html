@@ -13,10 +13,9 @@
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
   </head>
-  <body>
     <body>
       <!-- Navegación -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
         <div class="container">
           <a class="navbar-brand" href="{% url 'home' %}">TechConnect</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ned" aria-controls="ned" aria-expanded="false">
@@ -29,6 +28,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'my-blogs' %}">My Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blogs' %}">All Blogs</a>
               </li>
             </ul>
             <ul class="navbar-nav">
@@ -65,5 +67,7 @@
       <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <script src="{% static 'core/js/main.js' %}"></script>
+      <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+      <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
   </body>
 </html>

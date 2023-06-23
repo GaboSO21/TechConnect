@@ -29,13 +29,14 @@ class Blog(models.Model):
 class Post(models.Model):
 
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE) 
+    name = models.CharField(max_length=200, default='My Post')
     content = RichTextField()
 
     class Meta():
         db_table = 'post'
 
     def __str__(self):
-        return self.blog.name
+        return self.name
 
 class Coment(models.Model):
 
@@ -47,4 +48,4 @@ class Coment(models.Model):
         db_table = 'coment'
 
     def __str__(self):
-        return self.post
+        return self.content

@@ -1,0 +1,24 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light" >
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nep" aria-controls="nep"
+            aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nep">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create-blog' %}"><i>Create Blog</i></a>
+                </li>
+                {% if 'view-blog' in request.path and request.user == blog.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create-post' blog.id %}"><i>Create Post</i></a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
