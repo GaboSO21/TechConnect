@@ -84,7 +84,7 @@ DATABASES = {
         "NAME": "orcl",
         "USER": "tech_connect",
         "PASSWORD": "admin",
-        "HOST": "192.168.100.70",
+        "HOST": "192.168.56.101",
         "PORT": "1521",
     }
 }
