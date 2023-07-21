@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Pacifico&family=Public+Sans:wght@800&family=Roboto&family=Space+Grotesk:wght@700&family=Yellowtail&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eee;
+}
+
+a{
+    text-decoration: none;
+    color: #121212;
+}
+
+
+
+
+
+
+/*Nav*/
+nav{
+    display: flex;
+    margin: 1.5% 0;
+}
+
+.nav-elements-container,.nav-login-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-elements-container{
+    width: 85%;
+    margin: 0 auto;
+    font-family: 'Space Grotesk';
+    align-items: center;
+}
+
+.title{
+    font-size: 1.5rem;
+}
+
+.nav-login-container{
+    width: 30%;
+    font-size: 1.2rem;
+    padding: 1% 2%;
+    background-color: #121212;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login-link{
+    color: #eee;
+}
+
+
+
+/*First Content*/
+.main-img-container{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.main-img{
+    width: 85%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+/*Second Content*/
+.second-content-container{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.second-content-first-container,.third-content-txt{
+    width: 50%;
+    font-family: 'Montserrat';
+}
+
+.second-title{
+    font-size: 2rem;
+    margin-bottom: 3%;
+}
+
+.second-txt,.third-txt{
+    line-height: 1.5;
+    text-align: justify;
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+}
+
+.second-content-second-container{
+    width: 40%;
+    background-color: #212A3E;
+    padding: 2%;
+    font-family: 'Roboto';
+    line-height: 1.5;
+    letter-spacing: .6px;
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #eee;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+
+/*Third Content*/
+.third-content-container{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 4% auto;
+}
+
+.design-img{
+    height: 400px;
+    width: 50%;
+    object-fit:fill;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.third-content-txt{
+    width: 45%;
+}
+
+
+
+
+/*Footer*/
+.socials{
+    text-align: center;
+    display: flex;
+    margin: 7% auto 2%;
+    width: 12%;
+    justify-content: space-between;
+    align-items: center;
+}
+
