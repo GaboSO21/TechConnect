@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Pacifico&family=Public+Sans:wght@800&family=Roboto&family=Space+Grotesk:wght@700&family=Yellowtail&display=swap');
+
+body{
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.login-data{
+    background: #001C30;
+    width: 61%;
+    text-align: center;
+    padding-top: 10vh;
+    height: 100vh;
+}
+
+
+
+
+.logo-img{
+    height: 90px;
+    margin-top: 3%;
+}
+
+
+
+
+
+.data-h3{
+    font-family: 'Space Grotesk';
+    font-weight: 900;
+    font-size: 30px;
+    color: #F6F1F1;
+}
+
+.form-container{
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+input{
+    height: 40px;
+    width: 300px;
+}
+
+.input-info{
+    margin: 4% 2%;
+    border-radius: 5px;
+    padding-left: 13px;
+    border: 1px solid #1b1919c2;
+}
+
+.input-submit{
+    margin: 17% 2% 0%;
+    height: 50px;
+    width: 310px;
+    background-color: #11CEDA;
+    border-radius: 5px;
+    border: none;
+    font-weight: 900;
+}
+
+input:focus::placeholder{
+    color: black;
+    font-weight: 700;
+}
+
+
+::placeholder{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}
+
+
+.forgot-txt{
+    color: #F6F1F1;
+}
+
+.register-txt{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    color: #F6F1F1;
+}
+
+a{
+    text-decoration: none;
+    color: #11CEDA;
+    text-decoration:underline;
+}
+
+
+
+
+.posters-img{
+    width: 44%;
+    border-left: 1px solid #F6F1F1;
+}
+
+.posters{
+    width: 100%;
+}
+
