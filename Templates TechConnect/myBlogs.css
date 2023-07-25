@@ -4,3 +4,15 @@
     margin: 1% auto;
     width: 30%;
 }
+
+.myBlogs-btn-container{
+    width: 17%;
+    margin: 5% auto;
+    padding: .7% 3%;
+    background-color: #068FFF;
+    border-radius: 30px;
+    border: .5px solid black;
+    text-align: center;
+    font-family: 'Space Grotesk';
+    font-size: 1.2rem;
+}

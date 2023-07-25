@@ -142,3 +142,16 @@ nav{
     align-items: center;
 }
 
+.contact-container{
+    margin: 0 auto 5%;
+    width: 20%;
+    padding: 1% 2%;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
+    font-family: 'Space Grotesk';
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #121212;
+}
+

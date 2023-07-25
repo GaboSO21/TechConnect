@@ -1,0 +1,80 @@
+
+
+.createBlog-content-container{
+    width: 60%;
+    margin: 3% auto;
+    font-family: 'Space Grotesk';
+    font-size: 2rem;
+}
+
+.btn-back{
+    margin: 1% 2% 1% 0%;
+    height: 40px;
+    width: 10%;
+    border-radius: 5px;
+    border: 1px solid #1b1919c2;
+    font-size: 1rem;
+}
+
+.blog-name-container{
+    margin: 4% 0;
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    margin: 1% 0 1% 0%;
+    font-family: 'Space Grotesk';
+}
+
+.input-info{
+    margin: 1% 2% 1% 0%;
+    border-radius: 5px;
+    padding-left: 13px;
+    border: 1px solid #1b1919c2;
+}
+
+.topic{
+    margin: 4% 0 1.5%;
+}
+
+.dropdpwnMenu{
+    width: 100%;
+    height: 40px;
+    margin: 1% 0 1% 0%;
+    font-family: 'Space Grotesk';
+    margin: 1% 2% 1% 0%;
+    border-radius: 5px;
+    padding-left: 13px;
+    border: 1px solid #1b1919c2;
+}
+
+
+.btn-topic,.btn-img{
+    width: 100%;
+    height: 40px;
+    background-color: #121212;
+    border-radius: 5px;
+    border: none;
+    font-weight: 900;
+    color: #F6F1F1;
+    font-family: 'Space Grotesk';
+}
+
+.btn-img{
+    margin: 5% 0 5%;
+}
+
+.create-btn{
+    text-align: center;
+}
+
+.input-submit{
+    width: 75%;
+    background-color: #068FFF;
+    border-radius: 5px;
+    border: solid 1PX black;
+    font-weight: 900;
+    font-size: 1.1REM;
+    color: #F6F1F1;
+}
