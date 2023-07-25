@@ -30,6 +30,7 @@ class SignUp(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class ProfileUpdate(UpdateView):
+
     model = Perfil 
     fields = ['image', 'bio']
     success_url = reverse_lazy('profile')

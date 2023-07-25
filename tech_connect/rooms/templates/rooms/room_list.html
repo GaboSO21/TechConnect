@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Rooms{% endblock %}
+{% block content %}
+<main role="main">
+    <div class="container mb-4">
+        <div class="row mt-3">
+            <div class="col-md-9 mx-auto">
+                <p>Create <a href="{% url 'create-room' %}">Room</a> </p>
+                <div class="d-flex flex-column mb-3">
+                    {% for r in room_list %}
+                    <div class="d-flex flex-column justify-content-center p-2">
+                        <h3 class="text-black">{{r.name}}</h3>
+                        <h3 class="text-black">{{r.description}}</h3>
+                        <h5 class="text-secondary">{{r.topic.name}}</h5>
+                        <a href="{% url 'view-room' r.id %}">View Room</a>
+                    </div>
+                    {% empty %}
+                    <h4 class="mb-4"> No Rooms found </h4>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</main>
+{% endblock %}

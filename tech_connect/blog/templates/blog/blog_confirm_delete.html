@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Delete Blog{% endblock %}
+{% block content %}
+<main role="main">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-9 mx-auto">
+                <div>
+                    <form action="" method="post">{% csrf_token %}
+                        <p>¿Estás seguro de que quieres borrar "{{ blog }}"?</p>
+                        <input type="submit" class="btn btn-danger btn-block" value="Si, borrar blog" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

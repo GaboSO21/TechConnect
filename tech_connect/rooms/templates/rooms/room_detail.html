@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{room.name}}{% endblock %}
+{% block content %}
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto" style="text-align: center;">
+                <p>Host: {{room.host}}</p>
+                <p>Name: {{room.name}}</p>
+                <p>Desc: {{room.description}}</p>
+                <p>Desc: {{participants}}</p>
+            </div>
+
+            <div>
+
+                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <table>
+                        {{ form.as_p }}
+                    </table>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary btn-block" value="Send message" />
+                    </div>
+                </form>
+
+                <h3>Messages:</h3>
+
+                {% for message in messages %}
+
+                <p>{{message.user}}</p>
+                <p>{{message}}</p>
+                {% if request.user == message.user %}
+
+                <a href="{% url 'delete-message' message.id %}">X</a>
+
+                {% endif %}
+
+                {% empty %}
+
+                <p>No messages found</p>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+</main>
+{% endblock %}

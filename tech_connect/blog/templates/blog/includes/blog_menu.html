@@ -10,10 +10,16 @@
         </button>
         <div class="collapse navbar-collapse" id="nep">
             <ul class="navbar-nav mr-auto">
+                {% if 'view-blog' in request.path and request.user == blog.user %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'create-blog' %}"><i>Create Blog</i></a>
                 </li>
-                {% if 'view-blog' in request.path and request.user == blog.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'edit-blog' blog.id %}"><i>Edit Blog</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'delete-blog' blog.id %}"><i>Delete Blog</i></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'create-post' blog.id %}"><i>Create Post</i></a>
                 </li>

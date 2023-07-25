@@ -13,6 +13,7 @@
                 </p>
                 {% endif %}
                 <div class="d-flex flex-column mb-3">
+                    {{test}}
                     {% for b in blog_list %}
                     <a class="nav-link" href="{% url 'view-blog' b.id %}">
                         <div class="d-flex flex-column justify-content-center p-2"

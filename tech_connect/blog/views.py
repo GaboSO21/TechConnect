@@ -1,3 +1,4 @@
+from django.db import connection
 from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -10,6 +11,12 @@ from django import forms
 
 from .models import *
 from .forms import BlogForm, CommentForm, PostForm, TopicForm
+
+def my_custom_sql(self):
+    with connection.cursor() as cursor:
+        cursor.execute('SELECT * FROM vw1');
+        row = cursor.fetchone()
+    return row
 
 # Create your views here
 class BlogListView(ListView):
@@ -26,6 +33,7 @@ class MyBlogListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['blog_list'] = Blog.objects.filter(user=self.request.user)
+        context['test'] = my_custom_sql(self)
         return context
 
 class BlogDetailView(DetailView):
@@ -59,6 +67,36 @@ class BlogCreate(CreateView):
         return reverse_lazy('my-blogs') + '?ok'
 
 @method_decorator(login_required, name='dispatch')
+class BlogDelete(DeleteView):
+
+    model = Blog
+
+    def get_success_url(self):
+        return reverse_lazy('my-blogs') +'?deleted'
+
+
+@method_decorator(login_required, name='dispatch')
+class BlogUpdate(UpdateView):
+
+    model = Blog
+    form_class = BlogForm
+
+    def get_form(self, form_class=None):
+        form = super(BlogUpdate, self).get_form()
+
+        # Modificar en tiempo real
+        form.fields['user'].widget = forms.TextInput(attrs={'type': 'hidden', 'value': self.request.user.id })
+        form.fields['topic'] = forms.ModelChoiceField(queryset=Topic.objects.all())
+        form.fields['name'].widget = forms.TextInput(attrs={'class': 'form-control mb-2', 'placeholder': 'Blog name'})
+        form.fields['image'] = forms.ImageField()
+
+        return form
+
+
+    def get_success_url(self):
+        return reverse_lazy('view-blog', args=[self.object.id]) + '?ok'
+
+@method_decorator(login_required, name='dispatch')
 class PostCreate(CreateView):
 
     model = Post
@@ -79,7 +117,7 @@ class PostCreate(CreateView):
             return redirect('blogs')
 
 @login_required
-def postDetailView(request, pk):
+def PostDetailView(request, pk):
     form = CommentForm()
     form.fields['user'].widget = forms.TextInput(attrs={'type': 'hidden', 'value': request.user.id })
     form.fields['post'].widget = forms.TextInput(attrs={'type': 'hidden', 'value': pk })

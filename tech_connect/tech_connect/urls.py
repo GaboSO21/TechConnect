@@ -28,6 +28,8 @@ urlpatterns = [
     path('accounts/', include('registration.urls')),
     # Blog paths
     path('blog/', include('blog.urls')),
+    # Rooms paths
+    path('rooms/', include('rooms.urls')),
 ]
 
 if settings.DEBUG:
