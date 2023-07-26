@@ -1,0 +1,87 @@
+.roomPage-content-container{
+    width: 70%;
+    margin: 4% auto;
+    font-family: 'Space Grotesk';
+    font-size: 1.2rem;
+}
+
+/*Room Header*/
+
+.roomHeader-container{
+    padding: 2%;
+    background-color: #121212;
+    border-radius: 15px;
+    color: #F6F1F1;
+}
+
+.roomHeader-item-container{
+    display: flex;
+    margin-top: 2%;
+    align-items: start;
+}
+
+
+
+
+
+
+/*Room Message*/
+.message-container{
+    margin-top:7%;
+}
+
+.content-label{
+    font-size: 1.5rem;
+}
+
+input{
+    height: 40px;
+    margin: 1% 0 1% 0%;
+    font-family: 'Space Grotesk';
+}
+
+.input-info{
+    width: 60%;
+    margin: 1% 2% 1% 0%;
+    border-radius: 5px;
+    padding-left: 13px;
+    border: 1px solid #1b1919c2;
+}
+
+.input-submit{
+    width: 60%;
+    background-color: #068FFF;
+    border-radius: 5px;
+    border: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #121212;
+}
+
+input:focus::placeholder{
+    color: black;
+    font-weight: 700;
+}
+
+
+
+/*Message Box*/
+.message-box-container{
+    margin-top: 4%;
+}
+
+.message-box{
+    padding: 1%;
+    border-radius: 10px;
+    border: .2px solid black;
+    margin: 2% 0 1%;
+}
+
+.userName{
+    font-style: italic;
+    margin-bottom: 1%;
+}
+
+.message{
+    font-size: 1rem;
+}
