@@ -7,7 +7,7 @@ from django.db import models
 class Room(models.Model):
 
     topic = models.OneToOneField(Topic, on_delete=models.CASCADE)
-    host = models.OneToOneField(User, on_delete=models.CASCADE, related_name='host')
+    host = models.ForeignKey(User, on_delete=models.CASCADE, related_name='host')
     users = models.ManyToManyField(User, related_name='users')
     name = models.CharField(max_length=100)
     description = models.TextField()

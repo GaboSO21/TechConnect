@@ -9,7 +9,12 @@
                 <p>Host: {{room.host}}</p>
                 <p>Name: {{room.name}}</p>
                 <p>Desc: {{room.description}}</p>
-                <p>Desc: {{participants}}</p>
+                <p>Participants:</p>
+                {% for participant in participants %}
+                    <p>@{{participant}}</p>
+                {% empty %}
+                    <p>No participants, yet.</p>
+                {% endfor %}
             </div>
 
             <div>

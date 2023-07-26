@@ -30,6 +30,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     # Rooms paths
     path('rooms/', include('rooms.urls')),
+    # Profile paths
+    path('profiles/', include('profiles.urls')),
 ]
 
 if settings.DEBUG:

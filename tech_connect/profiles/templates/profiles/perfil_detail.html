@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{perfil.user}}{% endblock %}
+{% block content %}
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto" style="text-align: center;">
+                {{perfil.user}}
+                {{perfil.bio}}
+                {% if perfil.image %}
+                <img src="{{perfil.image.url}}" alt="">
+                {% else %}
+                <img src="{% static 'registration/img/no-avatar.jpg' %}" class="rounded img-fluid">
+                {% endif %}
+            </div>
+        </div>
+</main>
+{% endblock %}
