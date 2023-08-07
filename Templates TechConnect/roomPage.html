@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="blogPage.css" />
     <link rel="stylesheet" href="roomPage.css" />
+    <link rel="stylesheet" href="nav.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,8 +16,28 @@
     <nav>
       <div class="main-info">
         <a class="title" href="#"><h2>TECHCONNECT</h2></a>
-        <h4>Blogs</h4>
-        <h4>Rooms</h4>
+        <div class="dropdown">
+          <button class="dropbtn"><h4>Blogs</h4></button>
+          <div class="dropdown-content">
+            <a href="allBlogs.html">All Blogs</a>
+            <a href="myBlogs.html">My Blogs</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><h4>Rooms</h4></button>
+          <div class="dropdown-content">
+            <a href="allRooms.html">All Rooms</a>
+            <a href="myRooms.html">My Rooms</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><h4>The Hottets</h4></button>
+          <div class="dropdown-content">
+            <a href="#">Blogs Status</a>
+            <a href="#">Room Status</a>
+            <a href="#">User Status</a>
+          </div>
+        </div>
       </div>
       <div class="user-info">
         <i class="fa-solid fa-user fa-2x"></i>

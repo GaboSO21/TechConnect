@@ -16,41 +16,6 @@ a{
 
 
 
-/*Nav*/
-nav,.main-info,.user-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #121212;
-    color: #eee;
-}
-
-
-nav{
-    padding: 1% 7.5%;
-    width: 100%;
-}
-
-.main-info{
-    width: 50%;
-    font-family: 'Space Grotesk';
-    font-size: 1.3rem;
-}
-
-.title{
-    font-size: 1.5rem;
-    color: #eee;
-}
-
-.user-info{
-    width: 12%;
-    padding: .7% 2%;
-    background-color: #eee;
-    color: #121212;
-    border-radius: 30px;
-}
-
-
 
 /*Blog Header*/
 .blog-header-container{

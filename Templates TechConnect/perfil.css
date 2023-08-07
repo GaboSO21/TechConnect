@@ -57,18 +57,24 @@
 
 textarea{
     width: 100%;
+    resize: none;
 }
 
 .btns-form{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1%;
+}
+
+.btn-back-link{
+    width: 12%;
 }
 
 .btn-back{
     margin: 1% 2% 1% 0%;
     height: 40px;
-    width: 12%;
+    width: 100%;
     border-radius: 5px;
     border: 1px solid #1b1919c2;
     font-size: 1rem;

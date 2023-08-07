@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="blogPage.css" />
+    <link rel="stylesheet" href="nav.css" />
     <link rel="stylesheet" href="perfil.css" />
     <link
       rel="stylesheet"
@@ -15,8 +15,28 @@
     <nav>
       <div class="main-info">
         <a class="title" href="#"><h2>TECHCONNECT</h2></a>
-        <h4>Blogs</h4>
-        <h4>Rooms</h4>
+        <div class="dropdown">
+          <button class="dropbtn"><h4>Blogs</h4></button>
+          <div class="dropdown-content">
+            <a href="allBlogs.html">All Blogs</a>
+            <a href="myBlogs.html">My Blogs</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><h4>Rooms</h4></button>
+          <div class="dropdown-content">
+            <a href="allRooms.html">All Rooms</a>
+            <a href="myRooms.html">My Rooms</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><h4>The Hottets</h4></button>
+          <div class="dropdown-content">
+            <a href="#">Blogs Status</a>
+            <a href="#">Room Status</a>
+            <a href="#">User Status</a>
+          </div>
+        </div>
       </div>
       <div class="user-info">
         <i class="fa-solid fa-user fa-2x"></i>
@@ -42,17 +62,19 @@
           <div class="changeData-container">
             <h4>
               If you want to change your email click
-              <a class="link-change" href="#">Here</a>
+              <a class="link-change" href="changeEmail.html">Here</a>
             </h4>
             <h4>
               If you want to change your password click
-              <a class="link-change" href="#">Here</a>
+              <a class="link-change" href="changePassword.html">Here</a>
             </h4>
           </div>
           <div class="btns-form">
-            <button class="btn-back">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
+            <a href="allBlogs.html" class="btn-back-link">
+              <button class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </a>
             <input
               class="input-submit"
               type="submit"
