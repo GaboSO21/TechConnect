@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/register.css" />
+    <title>Create Acount</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="presentation-container">
+        <img class="logo-img" src="imgs/logo.png" alt="" />
+        <div class="slogan-container">
+          <p class="slogan">Connecting Tech Minds, One Post at a Time</p>
+        </div>
+      </div>
+      <div class="container-info">
+        <h1 class="title">Create your account</h1>
+        <p>Create an account to see the whole content!</p>
+        <div class="form-contianer">
+          <form method="post" action="">
+            <input
+              type="text"
+              name="Username"
+              id=""
+              placeholder="Username"
+            /><br />
+            <input type="email" name="email" id="" placeholder="Email" /><br />
+            <input
+              type="password"
+              name="password"
+              id=""
+              placeholder="Password"
+            /><br />
+            <ul class="list">
+              <li>Your password must contain at least 8 characters.</li>
+              <li>Your password cant be entirely numeric.</li>
+            </ul>
+            <input
+              type="password"
+              name="password"
+              id=""
+              placeholder="Password Confirmation"
+            /><br />
+            <input
+              class="submit-btn"
+              type="submit"
+              name="submit"
+              id=""
+              value="Create your account"
+            />
+          </form>
+        </div>
+        <p class="register-txt">
+          Already have an account? <a href="/view/login">Login here</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="../src/register.js"></script>
+  </body>
+</html>

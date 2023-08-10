@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Roboto:wght@400;900;700&family=Ubuntu:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: #121212;
+    overflow: hidden;
+}
+
+.container{
+    background-color: #F6F1F1;
+    width: 60%;
+    height: 85vh;
+    margin: 3% auto 2%;
+    padding: 1% 0;
+    text-align: center;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 900;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    height: 150px;
+}
+
+
+.presentation-container{
+    display: flex;
+    width: 55%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img{
+    margin: 4% 3% 0 3%;
+    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slogan{
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 50%;
+    margin: 7% auto;
+}
+
+
+
+
+.title{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-bottom: 10%;
+}
+
+input{
+    margin-top: 4%;
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #1b1919c2;
+    padding-left: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}
+
+.list{
+    text-align: left;
+    width: 75%;
+    margin: 2% auto 0;
+}
+
+input:focus::placeholder{
+    color: black;
+    font-weight: 700;
+}
+
+
+::placeholder{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}
+
+.submit-btn{
+    background-color: rgb(17,206,218);
+    font-family: 'Roboto' , sans-serif;
+    font-weight: 700;
+    border: 1px solid #F6F1F1;
+    margin: 8% 0 1%;
+    height: 40px;
+    letter-spacing: 1px;
+    color: #121212;
+}
+
+a{
+    color: rgb(17,206,218);
+    text-decoration:none;
+    font-size: 1.1rem;
+}
