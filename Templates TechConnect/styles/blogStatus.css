@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Pacifico&family=Public+Sans:wght@800&family=Roboto&family=Space+Grotesk:wght@700&family=Yellowtail&display=swap');
+
+
+
+body{
+    overflow-y: hidden;
+}
+
+
+.status-container{
+    padding: 4%;
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.st-status-container,.nd-status-container,.rd-status-container{
+    text-align: center;
+    padding: 3%;
+    width: 33%;
+}
+
+.nd-status-container{
+    height: 80%;
+    
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+}
+
+
+.h4-title{
+    font-family: 'Space grotesk';
+    font-size: 1.8rem;
+    margin-bottom: 10%;
+}
+
+.fa-award{
+    color: #FD8D14;
+}
+
+
+.h2-name{
+    margin-top: 20%;
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    font-style: italic;
+}
