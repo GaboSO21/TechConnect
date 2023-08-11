@@ -4,7 +4,9 @@
   </figure>
   </div>
 <hr>
-
+<h2>Main Idea</h2>
+<p>TechConnect is a community-driven blog dedicated to all things technology. It provides a platform for registered users to share their knowledge, insights, and experiences in the ever-evolving world of technology. From the latest gadget releases to emerging trends, product reviews, and practical guides, TechConnect is the go-to destination for tech enthusiasts seeking to explore, learn, and engage with like-minded individuals.<p/>
+  
 ## Project content:
 * Oracle database
 * Python
