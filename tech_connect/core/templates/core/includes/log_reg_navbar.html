@@ -1,0 +1,19 @@
+{% load static %}
+
+<nav>
+    <div class="nav-elements-container">
+        <div class="nav-main-container">
+            <a class="title" href="#">
+                <h2>TECHCONNECT</h2>
+            </a>
+        </div>
+        <div class="nav-login-container">
+            <a class="login-link" href="{% url 'login' %}">
+                <h3>Login</h3>
+            </a>
+            <a class="login-link" href="{% url 'signup' %}">
+                <h3>Create Account</h3>
+            </a>
+        </div>
+    </div>
+</nav>

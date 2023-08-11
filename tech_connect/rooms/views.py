@@ -10,9 +10,16 @@ from .models import Room, Message
 from .forms import MessageForm, RoomForm
 
 # Create your views here.
-class RoomListView(ListView):
+def RoomListView(request):
 
-    model = Room
+    if request.method == 'POST':
+        search_query = request.POST['search_query']
+        room_list = Room.objects.filter(name__contains=search_query)
+    else:
+        room_list = Room.objects.all() 
+
+    context = {'room_list': room_list}
+    return render(request, 'rooms/room_list.html', context)
 
 class MyRoomsListView(ListView):
 

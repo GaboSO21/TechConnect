@@ -26,17 +26,20 @@ class ProfileFrom(forms.ModelForm):
         model = Perfil
         fields = ['image', 'bio']
         widgets = {
-                'image': forms.ClearableFileInput(attrs={'class': 'form-control-file mt-3'}),
-                'bio': forms.Textarea(attrs={'class': 'form-control mt-3', 'rows': 3, 'placeholder': 'Biografia'}),
+                'image': forms.ClearableFileInput(),
+                'bio': forms.Textarea(attrs={'cols': 30, 'rows': 10, 'placeholder': 'Biografia'}),
         }
 
 class EmailForm(forms.ModelForm):
 
-    email = forms.EmailField(required=True, help_text="Requerido, 254 caracteres como maximo y debe de ser valido")
+    email = forms.EmailField(required=True)
 
     class Meta:
         model = User
         fields = ['email']
+        widgets = {
+                'email': forms.TextInput(attrs={'class': 'input-info', 'type': 'email'}),
+        }
         
     def clean_email(self):
         email = self.cleaned_data.get('email')

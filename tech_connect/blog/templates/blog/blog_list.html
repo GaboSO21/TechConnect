@@ -1,25 +1,29 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% load static %}
-{% block title %}My Blogs{% endblock %}
+
+{% block title %}TechConnect | All Blogs{% endblock %}
+
+{% block css %}
+<link href="{% static 'core/css/blogPage.css' %}" rel="stylesheet">
+<link href="{% static 'blog/css/myBlogs.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
 {% block content %}
-<main role="main">
-    <div class="container mb-4">
-        <div class="row mt-3">
-            <div class="col-md-9 mx-auto">
-                <div class="d-flex flex-column mb-3">
-                    {% for b in blog_list %}
-                    <a class="nav-link" href="{% url 'view-blog' b.id %}">
-                        <div class="d-flex flex-column justify-content-center p-2"
-                            style="background-image: url({{b.image.url}});text-align: center;border-radius: 10px; height: 30vh; margin-bottom: 10vh; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                            <h3 class="text-white">{{b}}</h3>
-                            <h5 class="text-secondary">{{b.topic.name}}</h5>
-                        </div>
-                    </a>
-                    {% empty %}
-                    <h4 class="mb-4"> No blogs found </h4>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-</main>
+{% for b in blog_list %}
+<div class="blog-header-container">
+  <img class="blog-img" src="{{b.image.url}}" alt="" />
+  <div class="create-post-btn-container">
+    <a href="{% url 'view-blog' b.id %}">
+      <h4 class="add-post-txt">
+        {{b}} | See More <i class="fa-solid fa-circle-plus"></i></h4>
+    </a>
+  </div>
+</div>
+{% empty %}
+<h4 class="title"> No blogs found </h4>
+{% endfor %}
 {% endblock %}

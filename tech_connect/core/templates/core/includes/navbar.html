@@ -1,0 +1,43 @@
+{% load static %}
+<link href="{% static 'core/css/nav.css' %}" rel="stylesheet">
+  <nav>
+    <div class="main-info">
+      <a class="title" href="#">
+        <h2>TECHCONNECT</h2>
+      </a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <h4>Blogs</h4>
+        </button>
+        <div class="dropdown-content">
+          <a href="{% url 'blogs' %}">All Blogs</a>
+          <a href="{% url 'my-blogs' %}">My Blogs</a>
+          <a href="{% url 'create-blog' %}">New Blog</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <h4>Rooms</h4>
+        </button>
+        <div class="dropdown-content">
+          <a href="{% url 'rooms' %}">All Rooms</a>
+          <a href="{% url 'my-rooms' %}">My Rooms</a>
+          <a href="{% url 'create-room' %}">New Room</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <h4>The Hottets</h4>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Blogs Status</a>
+          <a href="#">Room Status</a>
+          <a href="#">User Status</a>
+        </div>
+      </div>
+    </div>
+    <div class="user-info">
+      <a href="{% url 'profile' %}"><i class="fa-solid fa-user fa-2x"></i></a>
+      <i class="fa-solid fa-door-open fa-2x"></i>
+    </div>
+  </nav>

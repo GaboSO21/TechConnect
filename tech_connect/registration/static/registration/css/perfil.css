@@ -1,0 +1,95 @@
+
+
+.profile-container{
+    width: 60%;
+    margin: 3% auto;
+}
+
+
+
+
+/*Profile Header*/
+.main-profileHeader-container{
+    display: flex;
+    align-items: center;
+    font-family: 'Space Grotesk';
+}
+
+.pfp-container{
+    width:150px;
+    height:150px;
+    
+}
+
+.pfp{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    border-radius: 100px;
+}
+
+.main-profileHeader-txt{
+    margin-left: 3%;
+}
+
+.pf-name{
+    font-size: 2rem;
+}
+
+.btn-pic{
+    border-radius: 5px;
+    border: 1px solid #1b1919c2;
+    margin-top: 10%;
+    height: 40px;
+    width: 170px;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+/*Profile Content*/
+.profileContent-container{
+    margin-top: 5%;
+    font-family: 'Space Grotesk';
+}
+
+textarea{
+    width: 100%;
+}
+
+.btns-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-back{
+    margin: 1% 2% 1% 0%;
+    height: 40px;
+    width: 12%;
+    border-radius: 5px;
+    border: 1px solid #1b1919c2;
+    font-size: 1rem;
+}
+
+.input-submit{
+    width: 85%;
+    height: 40px;
+    background-color: #121212;
+    border-radius: 5px;
+    border: none;
+    font-weight: 900;
+    font-family: 'Space Grotesk';
+    color: #F6F1F1;
+}
+
+.profileData-container{
+    margin-top: 3%;
+}
+
+.link-change{
+    color: #068FFF;
+    text-decoration: underline;
+}

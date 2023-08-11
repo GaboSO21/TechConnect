@@ -1,43 +1,48 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% load static %}
-{% block title %}{{blog.name}}{% endblock %}
+
+{% block title %}TechConnect | {{b}}{% endblock %}
+
+{% block css %}
+<link href="{% static 'blog/css/blogPage.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
 {% block content %}
-{% include 'blog/includes/blog_menu.html' %}
-<main role="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mx-auto" style="text-align: center;">
-                <div class="d-flex flex-column justify-content-center"
-                    style="background-image: url({{blog.image.url}});border-radius: 10px; width: 100%; height: 30vh; margin-bottom: 10vh; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <h2 class="section-heading text-white mb-4">{{blog.name}}</h2>
-                    <h5 class="text-secondary">{{blog.topic}}</h5>
-                </div>
-            </div>
+<div class="blog-header-container">
+    <img class="blog-img" src="{{blog.image.url}}" alt="" />
 
-            <div>
+    {% if request.user == blog.user %}
+    <div class="create-post-btn-container">
+        <a href="{% url 'create-post' blog.id %}">
+            <h4 class="add-post-txt">
+                Add post <i class="fa-solid fa-circle-plus"></i></h4>
+        </a>
+    </div>
+    {% endif %}
+</div>
 
-                {% for post in posts %}
+{% for post in posts %}
+<div class="blog-post-container">
+    <h2 class="blog-title-txt">{{post.name}}</h2>
+    <p class="blog-desc-txt">
+        {{post.content|safe|truncatechars:21}}
+    </p>
+    <div class="view-post-btn-container">
+        <a href="{% url 'view-post' post.id %}">
+            <h4 class="view-post-txt">View Post</h4>
+        </a>
+    </div>
+</div>
+{% empty %}
+{% if request.user == blog.user %}
+<p>Start posting!</p>
+{% else %}
+<i style="color: gray;">No posts, yet!</i>
+{% endif %}
 
-                {{post.name}}
-                {{post.content|safe}}
-
-                <a class="nav-link" href="{% url 'view-post' post.id %}">View post</a>
-
-                {% empty %}
-
-                {% if request.user == blog.user %}
-                <a class="nav-link" style="color: gray;" href="{% url 'create-post' blog.id %}"><i>Start
-                        posting!</i></a>
-                {% else %}
-
-                <i style="color: gray;">No posts, yet!</i>
-
-                {% endif %}
-
-                {% endfor %}
-
-            </div>
-
-        </div>
-</main>
+{% endfor %}
 {% endblock %}

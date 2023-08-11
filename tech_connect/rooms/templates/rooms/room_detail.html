@@ -1,53 +1,68 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% load static %}
-{% block title %}{{room.name}}{% endblock %}
+
+{% block title %}TechConnect | All Rooms{% endblock %}
+
+{% block css %}
+<link href="{% static 'core/css/blogPage.css' %}" rel="stylesheet">
+<link href="{% static 'core/css/nav.css' %}" rel="stylesheet">
+<link href="{% static 'rooms/css/roomPage.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
 {% block content %}
-<main role="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mx-auto" style="text-align: center;">
-                <p>Host: {{room.host}}</p>
-                <p>Name: {{room.name}}</p>
-                <p>Desc: {{room.description}}</p>
-                <p>Participants:</p>
-                {% for participant in participants %}
-                    <p>@{{participant}}</p>
-                {% empty %}
-                    <p>No participants, yet.</p>
-                {% endfor %}
-            </div>
+<div class="roomPage-content-container">
+  <div class="roomHeader-container">
+    <div class="roomHeader-item-container">
+      <h4>Host: {{room.host}}</h4>
+    </div>
+    <div class="roomHeader-item-container">
+      <h4>Room name: {{room.name}}</h4>
+    </div>
+    <div class="roomHeader-item-container">
+      <h4>
+        Description:
+        {{room.description}}
+      </h4>
+    </div>
+      <p>Participants:</p>
+      {% for participant in participants %}
+      <p>@{{participant}}</p>
+      {% empty %}
+      <p>No participants, yet.</p>
+      {% endfor %}
+  </div>
 
-            <div>
+  <div class="message-container">
+    <h5 class="content-label">Content:</h5>
 
-                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-                    <table>
-                        {{ form.as_p }}
-                    </table>
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-primary btn-block" value="Send message" />
-                    </div>
-                </form>
+    <form action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input class="input-submit" type="submit" value="SEND" />
+    </form>
 
-                <h3>Messages:</h3>
+  </div>
+  <div class="message-box-container">
+    {% for message in messages %}
+    <div class="message-box">
+      <h4 class="userName">{{message.user}}</h4>
+      <p class="message">
+        {{message}}
+      {% if request.user == message.user %}
+        <a href="{% url 'delete-message' message.id %}">X</a>
+      {% endif %}
+      </p>
+    </div>
+    {% empty %}
 
-                {% for message in messages %}
+    <p>No messages found</p>
 
-                <p>{{message.user}}</p>
-                <p>{{message}}</p>
-                {% if request.user == message.user %}
+    {% endfor %}
 
-                <a href="{% url 'delete-message' message.id %}">X</a>
+  </div>
 
-                {% endif %}
-
-                {% empty %}
-
-                <p>No messages found</p>
-
-                {% endfor %}
-
-            </div>
-
-        </div>
-</main>
+</div>
 {% endblock %}

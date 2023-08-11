@@ -1,37 +1,62 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% load static %}
-{% block title %}Perfil{% endblock %}
+
+{% block title %}TechConnect | Profile{% endblock %}
+
+{% block css %}
+<link href="{% static 'registration/css/perfil.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
 {% block content %}
-<style>.errorlist{color:red;} label{display:none}</style>
-<main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-9 mx-auto mb-5">
-        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-          <div class="row">
-            <!-- Previa del avatar -->
-            <div class="col-md-2">
-              {% if request.user.perfil.image %}
-                <img src="{{request.user.perfil.image.url}}" class="rounded img-fluid">
-                <p class="mt-1">¿Borrar? <input type="checkbox" id="image-clear" name="image-clear" /></p>
-              {% else %}
-                <img src="{% static 'registration/img/no-avatar.jpg' %}" class="rounded img-fluid">
-              {% endif %}
-            </div>
-            <!-- Formulario -->
-            <div class="col-md-10">
-              <h3>Perfil</h3>
-              <input type="file" name="image" class="form-control-file mt-3" id="id_image">
-              {{ form.bio }}
-              <input type="email" value="{{request.user.email}}" class='form-control mt-3' readonly> 
-              <p class='mt-3'>Si deseas editar tu email haz click <a href="{% url 'profile_email' %}">aqui</a> <br>
-              Y si deseas cambiar tu password, haz click <a href="{% url 'password_change' %}">aqui</a> </p>
-              <input type="submit" class="btn btn-primary btn-block mt-3" value="Actualizar">
-            </div>
-          </div>
-        </form>
+<div class="profile-container">
+  <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+  <div class="profileHeader-container">
+    <div class="main-profileHeader-container">
+
+      {% if request.user.perfil.image %}
+      <div class="pfp-container">
+        <img src="{{request.user.perfil.image.url}}" alt="" class="pfp" />
+      </div>
+      {% else %}
+      <div class="pfp-container">
+        <img src="{% static 'registration/img/no-avatar.jpg' %}" alt="" class="pfp" />
+      </div>
+      {% endif %}
+
+      <div class="main-profileHeader-txt">
+        <h3 class="pf-name">Profile Name</h3>
+        <p class="email">{{request.user.email}}</p>
+          <br>
+          <input type="file" name="image" class="form-control-file mt-3" id="id_image">
       </div>
     </div>
   </div>
-</main>
+
+  <div class="profileContent-container">
+    {{ form.bio }}
+    <div class="profileData-container">
+      <div class="changeData-container">
+        <h4>
+          If you want to change your email click
+          <a class="link-change" href="{% url 'profile_email' %}">Here</a>
+        </h4>
+        <h4>
+          If you want to change your password click
+          <a class="link-change" href="{% url 'password_change' %}">Here</a>
+        </h4>
+      </div>
+      <div class="btns-form">
+        <button class="btn-back">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button type="submit" class="input-submit">CHANGE INFORMATION</button>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
 {% endblock %}

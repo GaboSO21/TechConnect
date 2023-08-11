@@ -13,7 +13,7 @@ class MessageForm(forms.ModelForm):
         model = Message
         fields = ['room', 'user', 'content']
         widgets = {
-            'content': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Message'})
+            'content': forms.TextInput(attrs={'class': 'input-info', 'placeholder': 'Message'})
         }
 
 

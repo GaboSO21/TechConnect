@@ -1,25 +1,45 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% load static %}
-{% block title %}Rooms{% endblock %}
+
+{% block title %}TechConnect | All Rooms{% endblock %}
+
+{% block css %}
+<link href="{% static 'core/css/blogPage.css' %}" rel="stylesheet">
+<link href="{% static 'core/css/nav.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
 {% block content %}
-<main role="main">
-    <div class="container mb-4">
-        <div class="row mt-3">
-            <div class="col-md-9 mx-auto">
-                <p>Create <a href="{% url 'create-room' %}">Room</a> </p>
-                <div class="d-flex flex-column mb-3">
-                    {% for r in room_list %}
-                    <div class="d-flex flex-column justify-content-center p-2">
-                        <h3 class="text-black">{{r.name}}</h3>
-                        <h3 class="text-black">{{r.description}}</h3>
-                        <h5 class="text-secondary">{{r.topic.name}}</h5>
-                        <a href="{% url 'view-room' r.id %}">View Room</a>
-                    </div>
-                    {% empty %}
-                    <h4 class="mb-4"> No Rooms found </h4>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-</main>
+
+<form class="d-flex" role="search" method="POST">
+ {% csrf_token %}
+ <input
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    name="search_query"
+    required aria-label="Search">
+ <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+{% for r in room_list %}
+<div class="blog-post-container">
+  <h2 class="blog-title-txt">{{r.name}}</h2>
+  <h5 class="blog-title-txt">{{r.topic.name}}</h5>
+  <p class="blog-desc-txt">
+    {{r.description}}
+  </p>
+  <div class="view-post-btn-container">
+    <a href="{% url 'view-room' r.id %}">
+      <h4 class="view-post-txt">See Room</h4>
+    </a>
+  </div>
+</div>
+{% empty %}
+<h4 class="mb-4"> No Rooms found </h4>
+{% endfor %}
+
 {% endblock %}

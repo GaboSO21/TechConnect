@@ -57,9 +57,9 @@ class BlogCreate(CreateView):
 
         # Modificar en tiempo real
         form.fields['user'].widget = forms.TextInput(attrs={'type': 'hidden', 'value': self.request.user.id })
-        form.fields['topic'] = forms.ModelChoiceField(queryset=Topic.objects.all())
-        form.fields['name'].widget = forms.TextInput(attrs={'class': 'form-control mb-2', 'placeholder': 'Blog name'})
-        form.fields['image'] = forms.ImageField()
+        form.fields['topic'] = forms.ModelChoiceField(queryset=Topic.objects.all(), widget=forms.Select(attrs={'class': 'dropdpwnMenu'}))
+        form.fields['name'].widget = forms.TextInput(attrs={'class': 'input-info', 'type': 'text', 'placeholder': 'Blog name'})
+        form.fields['image'] = forms.ImageField(widget=forms.FileInput(attrs={'class': 'btn-img'}))
 
         return form
 
@@ -86,9 +86,9 @@ class BlogUpdate(UpdateView):
 
         # Modificar en tiempo real
         form.fields['user'].widget = forms.TextInput(attrs={'type': 'hidden', 'value': self.request.user.id })
-        form.fields['topic'] = forms.ModelChoiceField(queryset=Topic.objects.all())
-        form.fields['name'].widget = forms.TextInput(attrs={'class': 'form-control mb-2', 'placeholder': 'Blog name'})
-        form.fields['image'] = forms.ImageField()
+        form.fields['topic'] = forms.ModelChoiceField(queryset=Topic.objects.all(), widget=forms.Select(attrs={'class': 'dropdpwnMenu'}))
+        form.fields['name'].widget = forms.TextInput(attrs={'class': 'input-info', 'type': 'text', 'placeholder': 'Blog name'})
+        form.fields['image'] = forms.ImageField(widget=forms.FileInput(attrs={'class': 'btn-img'}))
 
         return form
 

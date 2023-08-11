@@ -13,7 +13,7 @@ class TopicForm(forms.ModelForm):
         model = Topic
         fields = ['name']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name'})
+            'name': forms.TextInput(attrs={'class': 'input-info', 'placeholder': 'Name'})
         }
 
 class PostForm(forms.ModelForm):

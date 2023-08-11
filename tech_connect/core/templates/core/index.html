@@ -1,19 +1,36 @@
-{% extends 'core/base2.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Inicio{% endblock %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
+</head>
 
-{% block css %}
-<link href="{% static 'core/css/index.css' %}" rel="stylesheet">
-{% endblock %}
-
-{% block navbar %}
-{% include 'core/includes/log_reg_navbar.html' %}
-{% endblock %}
-
-{% block content %}
+<body>
+  <nav>
+    <div class="nav-elements-container">
+      <div class="nav-main-container">
+        <a class="title" href="#">
+          <h2>TECHCONNECT</h2>
+        </a>
+      </div>
+      <div class="nav-login-container">
+        <a class="login-link" href="#">
+          <h3>Login</h3>
+        </a>
+        <a class="login-link" href="#">
+          <h3>Create Account</h3>
+        </a>
+      </div>
+    </div>
+  </nav>
   <div class="main-img-container">
-    <img class="main-img" src="{% static 'core/img/pexels-luis-gomes-546819.jpg' %}" alt="Robot-Img" />
+    <img class="main-img" src="imgs/pexels-luis-gomes-546819.jpg" alt="Robot-Img" />
   </div>
   <div class="second-content-container">
     <div class="second-content-first-container">
@@ -37,7 +54,7 @@
     </div>
   </div>
   <div class="third-content-container">
-    <img class="design-img" src="{% static 'core/img/design.jpg' %}" alt="" />
+    <img class="design-img" src="imgs/design.jpg" alt="" />
     <div class="third-content-txt">
       <h3 class="second-title">
         Giving the opportunity to talk with TechPeople!
@@ -66,4 +83,6 @@
       </a>
     </div>
   </footer>
-{% endblock %}
+</body>
+
+</html>
