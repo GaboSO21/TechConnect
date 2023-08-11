@@ -28,6 +28,12 @@
 /*Room Message*/
 .message-container{
     margin-top:7%;
+    display: flex;
+    width: 90%;
+}
+
+.message-send-box{
+    width: 100%;
 }
 
 .content-label{
@@ -41,7 +47,7 @@ input{
 }
 
 .input-info{
-    width: 60%;
+    width: 90%;
     margin: 1% 2% 1% 0%;
     border-radius: 5px;
     padding-left: 13px;
@@ -49,7 +55,7 @@ input{
 }
 
 .input-submit{
-    width: 60%;
+    width: 90%;
     background-color: #068FFF;
     border-radius: 5px;
     border: none;
@@ -63,6 +69,30 @@ input:focus::placeholder{
     font-weight: 700;
 }
 
+
+.participants-container{
+    border: 1px solid #121212;
+    font: 16px/26px Georgia, Garamond, Serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    height: 130px;
+    width: 80%;
+}
+
+.participants-title{
+    margin-bottom: 4%;
+    padding: 1%;
+    background-color: #121212;
+    font-family: 'Space Grotesk';
+    font-size: 1.3rem;
+    color: #F6F1F1;
+}
+
+li{
+    font-family: 'Space Grotesk';
+    font-size: 1rem;
+}
 
 
 /*Message Box*/

@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/blogPage.css" />
-    <link rel="stylesheet" href="./styles/roomPage.css" />
     <link rel="stylesheet" href="./styles/nav.css" />
+    <link rel="stylesheet" href="./styles/postPage.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <title>TechConnect | Room</title>
+    <title>TechConnect | Post</title>
   </head>
   <body>
     <nav>
@@ -44,48 +43,27 @@
         <i class="fa-solid fa-door-open fa-2x"></i>
       </div>
     </nav>
-    <div class="roomPage-content-container">
-      <div class="roomHeader-container">
-        <div class="roomHeader-item-container">
-          <h4>Host: Host Name</h4>
-        </div>
-        <div class="roomHeader-item-container">
-          <h4>Room name: Room Name</h4>
-        </div>
-        <div class="roomHeader-item-container">
-          <h4>
-            Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Proin malesuada vehicula enim. Nullam commodo sapien vel
-            viverra ullamcorper
-          </h4>
-        </div>
-      </div>
-      <div class="message-container">
+    <div class="main-container">
+      <div class="post-topInfo-container">
+        <h3 class="post-title">Post Title</h3>
+        <p class="post-info">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+          malesuada vehicula enim. Nullam commodo sapien vel viverra
+          ullamcorper. Etiam rhoncus leo dolor, ut malesuada purus rutrum at.
+          Aliquam vehicula sem quis viverra pretium. Quisque erat ipsum,
+          venenatis eget urna nec, efficitur facilisis mauris.
+        </p>
         <div class="message-send-box">
-          <h5 class="content-label">Content:</h5>
           <form action="">
-            <input type="text" class="input-info" placeholder="Message" /><br />
-            <input class="input-submit" type="submit" value="SEND" />
+            <input
+              class="input-submit"
+              type="submit"
+              value="Write a comment!"
+            />
           </form>
         </div>
-        <div class="participants-container">
-          <h4 style="text-align: center" class="participants-title">
-            Participants of the Room
-          </h4>
-          <ul>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-            <li>Username</li>
-          </ul>
-        </div>
       </div>
-      <div class="message-box-container">
+      <div class="comment-section">
         <div class="message-box">
           <h4 class="userName">UserName</h4>
           <p class="message">

@@ -44,10 +44,14 @@
     font-size: 1.5rem;
 }
 
+.blog-img-container{
+    height: 400px;
+    width: 900px;
+}
 
 .allBlog-img{
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
     border-radius: 40px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
