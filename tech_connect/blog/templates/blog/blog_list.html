@@ -4,8 +4,23 @@
 {% block title %}TechConnect | All Blogs{% endblock %}
 
 {% block css %}
-<link href="{% static 'core/css/blogPage.css' %}" rel="stylesheet">
 <link href="{% static 'blog/css/myBlogs.css' %}" rel="stylesheet">
+<link href="{% static 'blog/css/blogPage.css' %}" rel="stylesheet">
+<style>
+.prueba-container {
+    width:200px;
+    height:200px;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.prueba {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    border-radius: 100px;
+}
+</style>
 {% endblock %}
 
 {% block navbar %}
@@ -14,15 +29,27 @@
 
 {% block content %}
 {% for b in blog_list %}
-<div class="blog-header-container">
-  <img class="blog-img" src="{{b.image.url}}" alt="" />
-  <div class="create-post-btn-container">
-    <a href="{% url 'view-blog' b.id %}">
-      <h4 class="add-post-txt">
-        {{b}} | See More <i class="fa-solid fa-circle-plus"></i></h4>
-    </a>
+  <div class="allBlog-header-container">
+    <div class="prueba-container">
+      {% if b.user.perfil.image  %}
+      <img src="{{b.user.perfil.image.url}}" alt="" class="prueba" />
+      {% else %}
+      <img src="{% static 'registration/img/no-avatar.jpg' %}" class="prueba">
+      {% endif %}
+      <h3 class="userName-pfp">{{b.user}}</h3>
+    </div>
+    <div class="blog-info">
+      <div class="blog-img-container">
+        <img class="allBlog-img" src="{{b.image.url}}" alt="" />
+      </div>
+      <div class="create-post-btn-container">
+        <a href="{% url 'view-blog' b.id %}">
+          <h4 class="add-post-txt">
+            {{b}} | See More <i class="fa-solid fa-circle-plus"></i></h4>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
 {% empty %}
 <h4 class="title"> No blogs found </h4>
 {% endfor %}

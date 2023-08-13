@@ -12,17 +12,24 @@ from django import forms
 from .models import *
 from .forms import BlogForm, CommentForm, PostForm, TopicForm
 
-def my_custom_sql(self):
-    with connection.cursor() as cursor:
-        cursor.execute('SELECT * FROM vw1');
-        row = cursor.fetchone()
-    return row
+# def my_custom_sql(self):
+#     with connection.cursor() as cursor:
+#         cursor.execute('SELECT * FROM vw1')
+#         row = dictfetchall(cursor)
+#     return row
+#
+# def dictfetchall(cursor):
+#     """
+#     Return all rows from a cursor as a dict.
+#     Assume the column names are unique.
+#     """
+#     columns = [col[0] for col in cursor.description]
+#     return [dict(zip(columns, row)) for row in cursor.fetchall()]
 
 # Create your views here
 class BlogListView(ListView):
 
     model = Blog
-    
 
 @method_decorator(login_required, name='dispatch')
 class MyBlogListView(ListView):
@@ -33,7 +40,7 @@ class MyBlogListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['blog_list'] = Blog.objects.filter(user=self.request.user)
-        context['test'] = my_custom_sql(self)
+        # context['test'] = my_custom_sql(self)
         return context
 
 class BlogDetailView(DetailView):

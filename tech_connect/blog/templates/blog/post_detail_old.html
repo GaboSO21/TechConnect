@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{blog.name}}{% endblock %}
+{% block content %}
+{% include 'blog/includes/blog_menu.html' %}
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div>
+
+
+                {{post.name}}
+                {{post.content|safe}}
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Write a Comment!
+                </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                                    {{form.as_p}}
+                                    <input type="submit" value="Comment">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                {% for comment in comments %}
+                {{comment.user}}<br>
+                {{comment.content}}<br>
+                {% empty %}
+                <p>No comments.</p>
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+</main>
+{% endblock %}

@@ -1,20 +1,30 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% load static %}
-{% block title %}{{blog.name}}{% endblock %}
+
+{% block title %}TechConnect | {{post.name}}{% endblock %}
+
+{% block css %}
+<link href="{% static 'blog/css/postPage.css' %}" rel="stylesheet">
+<link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
 {% block content %}
-{% include 'blog/includes/blog_menu.html' %}
-<main role="main">
-    <div class="container">
-        <div class="row">
-            <div>
-
-
-                {{post.name}}
-                {{post.content|safe}}
-
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Write a Comment!
-                </button>
+<div class="main-container">
+  <div class="post-topInfo-container">
+    <h3 class="post-title">{{post.name}}</h3>
+    <p class="post-info">
+      {{post.content|safe}}
+    </p>
+    <div class="message-send-box">
+        <button type="button" class="input-submit" data-toggle="modal" data-target="#exampleModal">
+          Write a Comment!
+        </button>
+    </div>
+  </div>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -36,17 +46,26 @@
                         </div>
                     </div>
                 </div>
-                <br>
-                {% for comment in comments %}
-                {{comment.user}}<br>
-                {{comment.content}}<br>
-                {% empty %}
-                <p>No comments.</p>
-                {% endfor %}
 
+  <div class="comment-section">
+    {% for comment in comments %}
+    <div class="message-box">
+      <h4 class="userName">{{comment.user}}</h4>
+      <p class="message">
+        {{comment.content}}
+      </p>
+    </div>
+    {% empty %}
+    <div class="message-box">
+      <p class="message">
+        No comments yet.
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
 
-            </div>
-
-        </div>
-</main>
+{% block javascript %}
+<script src="{% static 'core/js/main.js' %}"></script>
 {% endblock %}
