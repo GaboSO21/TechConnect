@@ -27,7 +27,9 @@ body{
     border-left: 4px solid black;
 }
 
-
+.title-container{
+    height: 100px;
+}
 .h4-title{
     font-family: 'Space grotesk';
     font-size: 1.8rem;
@@ -44,4 +46,15 @@ body{
     font-family: 'Montserrat';
     font-size: 2rem;
     font-style: italic;
+}
+
+.p-txt{
+    font-family: 'Space Grotesk';
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 4%;
+}
+
+span{
+    color: #cb7417;
 }
