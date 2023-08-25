@@ -1,5 +1,5 @@
 /*-------------------------------------------------------------- 15 funciones ------------------------------------------------------------*/
-/*Función 1: obtener todos los blogs de un usuario específico.*/.
+/*FunciÃ³n 1: obtener todos los blogs de un usuario especÃ­fico.*/.
 
 CREATE OR REPLACE FUNCTION getBlogsByUserId(idUsuario IN NUMBER) RETURN SYS_REFCURSOR AS
   blogs_cursor SYS_REFCURSOR;
@@ -10,7 +10,7 @@ BEGIN
 END;
 
 
-/*Función 2: obtener todos los blogs de un tema específico.*/.
+/*FunciÃ³n 2: obtener todos los blogs de un tema especÃ­fico.*/.
 CREATE OR REPLACE FUNCTION getBlogsByTopicId(idTema IN NUMBER) RETURN SYS_REFCURSOR AS
   blogs_cursor SYS_REFCURSOR;
 BEGIN
@@ -20,7 +20,7 @@ BEGIN
 END;
 
 
-/*Función 3: obtener todos los comentarios de un post específico.*/.
+/*FunciÃ³n 3: obtener todos los comentarios de un post especÃ­fico.*/.
 CREATE OR REPLACE FUNCTION getCommentsByPostId(idPost IN NUMBER) RETURN SYS_REFCURSOR AS
   comments_cursor SYS_REFCURSOR;
 BEGIN
@@ -30,7 +30,7 @@ BEGIN
 END;
 
 
-/*Función 4: obtener todos los mensajes de una sala de chat específica.*/.
+/*FunciÃ³n 4: obtener todos los mensajes de una sala de chat especÃ­fica.*/.
 CREATE OR REPLACE FUNCTION getMessagesByRoomId(idSala IN NUMBER) RETURN SYS_REFCURSOR AS
   messages_cursor SYS_REFCURSOR;
 BEGIN
@@ -40,7 +40,7 @@ BEGIN
 END;
 
 
-/*Función 5: obtener todos los usuarios de una sala de chat específica.*/.
+/*FunciÃ³n 5: obtener todos los usuarios de una sala de chat especÃ­fica.*/.
 CREATE OR REPLACE FUNCTION getUsersByRoomId(idSala IN NUMBER) RETURN SYS_REFCURSOR AS
   users_cursor SYS_REFCURSOR;
 BEGIN
@@ -52,7 +52,7 @@ BEGIN
 END;
 
 
-/*Función 6: crear un nuevo usuario.*/.
+/*FunciÃ³n 6: crear un nuevo usuario.*/.
 CREATE OR REPLACE FUNCTION createUser(
     primApellido IN NVARCHAR2,
     segApellido IN NVARCHAR2,
@@ -69,7 +69,7 @@ BEGIN
 END;
 
 
-/*Función 7: crear un nuevo blog.*/.
+/*FunciÃ³n 7: crear un nuevo blog.*/.
 CREATE OR REPLACE FUNCTION createBlog(
     image IN NVARCHAR2,
     idUsuario IN NUMBER,
@@ -84,7 +84,7 @@ BEGIN
 END;
 
 
-/*Función 8: crear un nuevo post en un blog específico.*/.
+/*FunciÃ³n 8: crear un nuevo post en un blog especÃ­fico.*/.
 CREATE OR REPLACE FUNCTION createPost(
     content IN NVARCHAR2,
     idBlog IN NUMBER
@@ -98,7 +98,7 @@ BEGIN
 END;
 
 
-/*Función 9: crear un nuevo comentario en un post específico.*/.
+/*FunciÃ³n 9: crear un nuevo comentario en un post especÃ­fico.*/.
 CREATE OR REPLACE FUNCTION createComment(
     content IN NVARCHAR2,
     idPost IN NUMBER,
@@ -113,7 +113,7 @@ BEGIN
 END;
 
 
-/*Función 10: crear una nueva sala de chat.*/.
+/*FunciÃ³n 10: crear una nueva sala de chat.*/.
 CREATE OR REPLACE FUNCTION createRoom(
     nombre IN NVARCHAR2,
     descripcion IN NVARCHAR2,
@@ -129,7 +129,7 @@ BEGIN
 END;
 
 
-/*Función 11: añadir un usuario a una sala de chat existente.*/.
+/*FunciÃ³n 11: aÃ±adir un usuario a una sala de chat existente.*/.
 CREATE OR REPLACE FUNCTION addUserToRoom(
     idUsuario IN NUMBER,
     idSala IN NUMBER
@@ -143,7 +143,7 @@ BEGIN
 END;
 
 
-/*Función 12: enviar un nuevo mensaje en una sala de chat específica.*/.
+/*FunciÃ³n 12: enviar un nuevo mensaje en una sala de chat especÃ­fica.*/.
 CREATE OR REPLACE FUNCTION sendMessage(
     content IN NVARCHAR2,
     idUsuario IN NUMBER,
@@ -158,7 +158,7 @@ BEGIN
 END;
 
 
-/*Función 13: actualizar los datos de un usuario.*/.
+/*FunciÃ³n 13: actualizar los datos de un usuario.*/.
 CREATE OR REPLACE FUNCTION updateUser(
     idUsuario IN NUMBER,
     primApellido IN NVARCHAR2,
@@ -179,7 +179,7 @@ BEGIN
 END;
 
 
-/*Función 14: actualizar los datos de un blog.*/.
+/*FunciÃ³n 14: actualizar los datos de un blog.*/.
 CREATE OR REPLACE FUNCTION updateBlog(
     idBlog IN NUMBER,
     image IN NVARCHAR2,
@@ -196,7 +196,7 @@ BEGIN
 END;
 
 
-/*Función 15: actualizar el contenido de un post.*/.
+/*FunciÃ³n 15: actualizar el contenido de un post.*/.
 CREATE OR REPLACE FUNCTION updatePost(
     idPost IN NUMBER,
     content IN NVARCHAR2
@@ -208,8 +208,6 @@ BEGIN
   RETURN 1;
 END;
 /
-
-
 
 /*-------------------------------------------------------------- 10 paquetes ------------------------------------------------------------*/
 /*Paquete 1: operaciones con la tabla Admin.*/.
@@ -273,7 +271,7 @@ CREATE OR REPLACE PACKAGE TopicPackage AS
 END TopicPackage;
 
 
-/*Paquete 10: operaciones comunes en múltiples tablas.*/.
+/*Paquete 10: operaciones comunes en mÃºltiples tablas.*/.
 CREATE OR REPLACE PACKAGE CommonPackage AS
   FUNCTION getCommentsByUserId(idUsuario IN NUMBER) RETURN SYS_REFCURSOR;
   FUNCTION getPostsByUserId(idUsuario IN NUMBER) RETURN SYS_REFCURSOR;
@@ -281,7 +279,7 @@ CREATE OR REPLACE PACKAGE CommonPackage AS
   FUNCTION getCommentsByTopicId(idTema IN NUMBER) RETURN SYS_REFCURSOR;
 END CommonPackage;
 /*-------------------------------------------------------------- 5 triggers ------------------------------------------------------------*/
-/*Trigger 1: mantener actualizado el número de blogs de un usuario.*/.
+/*Trigger 1: mantener actualizado el nÃºmero de blogs de un usuario.*/.
 CREATE OR REPLACE TRIGGER updateNumBlogs
 AFTER INSERT OR UPDATE OR DELETE ON "Blog"
 FOR EACH ROW
@@ -311,7 +309,7 @@ BEGIN
 END;
 
 
-/*Trigger 3: registrar la fecha de creación de un blog.*/.
+/*Trigger 3: registrar la fecha de creaciÃ³n de un blog.*/.
 CREATE OR REPLACE TRIGGER setBlogCreationDate
 BEFORE INSERT ON "Blog"
 FOR EACH ROW
@@ -320,7 +318,7 @@ BEGIN
 END;
 
 
-/*Trigger 4: mantener actualizado el número de comentarios de un post.*/.
+/*Trigger 4: mantener actualizado el nÃºmero de comentarios de un post.*/.
 CREATE OR REPLACE TRIGGER updateNumComments
 AFTER INSERT OR UPDATE OR DELETE ON "Comentario"
 FOR EACH ROW
@@ -336,7 +334,7 @@ BEGIN
 END;
 
 
-/*Trigger 5: mantener actualizado el número de miembros en una sala de chat.*/.
+/*Trigger 5: mantener actualizado el nÃºmero de miembros en una sala de chat.*/.
 CREATE OR REPLACE TRIGGER updateNumMembers
 AFTER INSERT OR UPDATE OR DELETE ON "RoomUsuario"
 FOR EACH ROW
@@ -366,9 +364,9 @@ BEGIN
 END;
 
 
-/*Cursor 2: Obtener todos los blogs de un usuario específico.*/.
+/*Cursor 2: Obtener todos los blogs de un usuario especÃ­fico.*/.
 DECLARE
-  v_user_id NUMBER := 1; -- ID del usuario específico
+  v_user_id NUMBER := 1; -- ID del usuario especÃ­fico
   CURSOR c_blogs IS
     SELECT * FROM "Blog" WHERE "Usuario" = v_user_id;
 BEGIN
@@ -378,9 +376,9 @@ BEGIN
 END;
 
 
-/*Cursor 3: Obtener todos los blogs de un tema específico.*/.
+/*Cursor 3: Obtener todos los blogs de un tema especÃ­fico.*/.
 DECLARE
-  v_topic_id NUMBER := 3; -- ID del tema específico
+  v_topic_id NUMBER := 3; -- ID del tema especÃ­fico
   CURSOR c_blogs IS
     SELECT * FROM "Blog" WHERE "Topic" = v_topic_id;
 BEGIN
@@ -390,9 +388,9 @@ BEGIN
 END;
 
 
-/*Cursor 4: Obtener todos los comentarios de un post específico.*/.
+/*Cursor 4: Obtener todos los comentarios de un post especÃ­fico.*/.
 DECLARE
-  v_post_id NUMBER := 2; -- ID del post específico
+  v_post_id NUMBER := 2; -- ID del post especÃ­fico
   CURSOR c_comments IS
     SELECT * FROM "Comentario" WHERE "Post" = v_post_id;
 BEGIN
@@ -402,9 +400,9 @@ BEGIN
 END;
 
 
-/*Cursor 5: Obtener todos los mensajes de una sala de chat específica.*/.
+/*Cursor 5: Obtener todos los mensajes de una sala de chat especÃ­fica.*/.
 DECLARE
-  v_room_id NUMBER := 4; -- ID de la sala de chat específica
+  v_room_id NUMBER := 4; -- ID de la sala de chat especÃ­fica
   CURSOR c_messages IS
     SELECT * FROM "Mensaje" WHERE "Room" = v_room_id;
 BEGIN
@@ -414,9 +412,9 @@ BEGIN
 END;
 
 
-/*Cursor 6: Obtener todos los usuarios de una sala de chat específica.*/.
+/*Cursor 6: Obtener todos los usuarios de una sala de chat especÃ­fica.*/.
 DECLARE
-  v_room_id NUMBER := 5; -- ID de la sala de chat específica
+  v_room_id NUMBER := 5; -- ID de la sala de chat especÃ­fica
   CURSOR c_users_in_room IS
     SELECT U.* FROM "Usuario" U
     INNER JOIN "RoomUsuario" RU ON U."idUsuario" = RU."Usuario"
@@ -427,9 +425,9 @@ BEGIN
   END LOOP;
 END;
 
-/*Cursor 7: Obtener todos los posts de un blog específico.*/.
+/*Cursor 7: Obtener todos los posts de un blog especÃ­fico.*/.
 DECLARE
-  v_blog_id NUMBER := 3; -- ID del blog específico
+  v_blog_id NUMBER := 3; -- ID del blog especÃ­fico
   CURSOR c_posts IS
     SELECT * FROM "Post" WHERE "Blog" = v_blog_id;
 BEGIN
@@ -439,9 +437,9 @@ BEGIN
 END;
 
 
-/*Cursor 8: Obtener todos los comentarios realizados por un usuario específico.*/.
+/*Cursor 8: Obtener todos los comentarios realizados por un usuario especÃ­fico.*/.
 DECLARE
-  v_user_id NUMBER := 2; -- ID del usuario específico
+  v_user_id NUMBER := 2; -- ID del usuario especÃ­fico
   CURSOR c_comments_by_user IS
     SELECT * FROM "Comentario" WHERE "Usuario" = v_user_id;
 BEGIN
@@ -451,9 +449,9 @@ BEGIN
 END;
 
 
-/*Cursor 9: Obtener todos los tags de un post específico.*/.
+/*Cursor 9: Obtener todos los tags de un post especÃ­fico.*/.
 DECLARE
-  v_post_id NUMBER := 4; -- ID del post específico
+  v_post_id NUMBER := 4; -- ID del post especÃ­fico
   CURSOR c_tags_by_post IS
     SELECT * FROM "Tag" WHERE "Post" = v_post_id;
 BEGIN
@@ -463,9 +461,9 @@ BEGIN
 END;
 
 
-/*Cursor 10: Obtener todos los blogs creados por usuarios con un nombre específico.*/.
+/*Cursor 10: Obtener todos los blogs creados por usuarios con un nombre especÃ­fico.*/.
 DECLARE
-  v_user_name NVARCHAR2(255) := 'Pérez'; -- Nombre del usuario específico
+  v_user_name NVARCHAR2(255) := 'PÃ©rez'; -- Nombre del usuario especÃ­fico
   CURSOR c_blogs_by_user_name IS
     SELECT B.* FROM "Blog" B
     INNER JOIN "Usuario" U ON B."Usuario" = U."idUsuario"
@@ -477,9 +475,9 @@ BEGIN
 END;
 
 
-/*Cursor 11: Obtener todos los usuarios que han realizado comentarios en un blog específico.*/.
+/*Cursor 11: Obtener todos los usuarios que han realizado comentarios en un blog especÃ­fico.*/.
 DECLARE
-  v_blog_id NUMBER := 2; -- ID del blog específico
+  v_blog_id NUMBER := 2; -- ID del blog especÃ­fico
   CURSOR c_users_with_comments IS
     SELECT U.* FROM "Usuario" U
     INNER JOIN "Comentario" C ON U."idUsuario" = C."Usuario"
@@ -491,9 +489,9 @@ BEGIN
 END;
 
 
-/*Cursor 12: Obtener todos los blogs que contienen un tag específico.*/.
+/*Cursor 12: Obtener todos los blogs que contienen un tag especÃ­fico.*/.
 DECLARE
-  v_tag_name NVARCHAR2(255) := 'tecnología'; -- Nombre del tag específico
+  v_tag_name NVARCHAR2(255) := 'tecnologÃ­a'; -- Nombre del tag especÃ­fico
   CURSOR c_blogs_with_tag IS
     SELECT B.* FROM "Blog" B
     INNER JOIN "Tag" T ON B."idBlog" = T."Post"
@@ -505,10 +503,10 @@ BEGIN
 END;
 
 
-/*Cursor 13: Obtener todos los blogs de un tema específico creados por usuarios con un apellido específico.*/.
+/*Cursor 13: Obtener todos los blogs de un tema especÃ­fico creados por usuarios con un apellido especÃ­fico.*/.
 DECLARE
-  v_topic_id NUMBER := 1; -- ID del tema específico
-  v_user_lastname NVARCHAR2(255) := 'Gómez'; -- Apellido del usuario específico
+  v_topic_id NUMBER := 1; -- ID del tema especÃ­fico
+  v_user_lastname NVARCHAR2(255) := 'GÃ³mez'; -- Apellido del usuario especÃ­fico
   CURSOR c_blogs_by_topic_and_user IS
     SELECT B.* FROM "Blog" B
     INNER JOIN "Usuario" U ON B."Usuario" = U."idUsuario"
@@ -520,10 +518,10 @@ BEGIN
 END;
 
 
-/*Cursor 14: Obtener todos los mensajes enviados por un usuario específico en una sala de chat específica.*/.
+/*Cursor 14: Obtener todos los mensajes enviados por un usuario especÃ­fico en una sala de chat especÃ­fica.*/.
 DECLARE
-  v_user_id NUMBER := 3; -- ID del usuario específico
-  v_room_id NUMBER := 5; -- ID de la sala de chat específica
+  v_user_id NUMBER := 3; -- ID del usuario especÃ­fico
+  v_room_id NUMBER := 5; -- ID de la sala de chat especÃ­fica
   CURSOR c_messages_by_user_and_room IS
     SELECT * FROM "Mensaje" WHERE "Usuario" = v_user_id AND "Room" = v_room_id;
 BEGIN
@@ -533,7 +531,7 @@ BEGIN
 END;
 
 
-/*Cursor 15: Obtener todos los usuarios que no han creado ningún blog.*/.
+/*Cursor 15: Obtener todos los usuarios que no han creado ningÃºn blog.*/.
 DECLARE
   CURSOR c_users_without_blogs IS
     SELECT U.* FROM "Usuario" U
