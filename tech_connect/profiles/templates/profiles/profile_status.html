@@ -1,0 +1,60 @@
+{% extends 'core/base2.html' %}
+{% load static %}
+
+{% block title %}TechConnect | Users Status{% endblock %}
+
+{% block css %}
+<link href="{% static 'core/css/nav.css' %}" rel="stylesheet">
+<link href="{% static 'blog/css/blogStatus.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
+{% block content%}
+<div class="status-container">
+  <div class="st-status-container">
+    <div class="title-container">
+      <h4 class="h4-title">The user with more blogs</h4>
+    </div>
+
+    <i class="fa-solid fa-award fa-3x"></i>
+    <div class="name-container">
+      <h2 class="h2-name">{{blogs.0.Nombre}}</h2>
+    </div>
+    <p class="p-txt">
+      This user has created a total of {{blogs.0.CantidadBlogs}} blogs.
+      <span> Are you in any of them?</span>
+    </p>
+  </div>
+  <div class="nd-status-container">
+    <div class="title-container">
+      <h4 class="h4-title">The user with more comments</h4>
+    </div>
+
+    <i class="fa-solid fa-award fa-3x"></i>
+    <div class="name-container">
+      <h2 class="h2-name">{{comments.0.Nombre}}</h2>
+    </div>
+    <p class="p-txt">
+      This user has made a total of {{comments.0.CantidadComentarios}} comment.
+      <span>Have you seem any of them?</span>
+    </p>
+  </div>
+  <div class="rd-status-container">
+    <div class="title-container">
+      <h4 class="h4-title">The user with more rooms</h4>
+    </div>
+
+    <i class="fa-solid fa-award fa-3x"></i>
+    <div class="name-container">
+      <h2 class="h2-name">{{rooms.0.Nombre}}</h2>
+    </div>
+    <p class="p-txt">
+      This user has a total of {{rooms.0.CantidadSalas}} rooms. <span>Are you in any of them?</span>
+    </p>
+  </div>
+</div>
+{% endblock %}

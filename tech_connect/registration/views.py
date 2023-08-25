@@ -1,3 +1,5 @@
+from django.db.models.base import connection
+from django.shortcuts import redirect, render
 from django.views.generic import CreateView
 from django.views.generic.edit import UpdateView 
 from django.urls import reverse_lazy
@@ -27,6 +29,26 @@ class SignUp(CreateView):
         form.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-2', 'placeholder': 'Repita la password'})
 
         return form
+
+@login_required
+def Register(request):
+    """
+    Registro de usuario con procedimiento almacenado
+    """
+    form = UserCreationFormWithEmail()
+
+    if request.method == 'POST':
+        form = UserCreationFormWithEmail(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password1']
+            with connection.cursor() as cursor:
+                cursor.callproc('user_package.insert_user', [name, email, password])
+            return redirect('login') 
+
+    context = {'form': form}
+    return render(request, 'registration/signup.html', context)
 
 @method_decorator(login_required, name='dispatch')
 class ProfileUpdate(UpdateView):

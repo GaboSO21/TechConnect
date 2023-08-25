@@ -23,6 +23,12 @@
         {{b}} | See More <i class="fa-solid fa-circle-plus"></i></h4>
     </a>
   </div>
+  <div class="create-post-btn-container">
+    <a href="{% url 'delete-blog' b.id %}">
+      <h4 class="add-post-txt">
+        {{b}} | Delete Blog <i class="fa-solid fa-circle-plus"></i></h4>
+    </a>
+  </div>
 </div>
 {% empty %}
 <h4 class="title"> Create your fist blog! </h4>

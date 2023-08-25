@@ -53,6 +53,10 @@
       <h4 class="userName">{{comment.user}}</h4>
       <p class="message">
         {{comment.content}}
+
+                    {% if request.user == comment.user %}
+                        <a href="{% url 'delete-coment' comment.id %}">X</a>
+                    {% endif %}
       </p>
     </div>
     {% empty %}
@@ -67,5 +71,7 @@
 {% endblock %}
 
 {% block javascript %}
+<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'core/js/main.js' %}"></script>
 {% endblock %}

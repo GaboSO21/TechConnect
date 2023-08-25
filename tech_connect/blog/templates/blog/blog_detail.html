@@ -29,13 +29,25 @@
 <div class="blog-post-container">
     <h2 class="blog-title-txt">{{post.name}}</h2>
     <p class="blog-desc-txt">
-        {{post.content|safe|truncatechars:21}}
+        {{post.content|safe|truncatechars:9}}
     </p>
     <div class="view-post-btn-container">
         <a href="{% url 'view-post' post.id %}">
             <h4 class="view-post-txt">View Post</h4>
         </a>
     </div>
+    {% if request.user == blog.user %}
+    <div class="create-post-btn-container">
+        <a href="{% url 'edit-post' post.id %}">
+            <h4 class="add-post-txt">Edit post</h4>
+        </a>
+    </div>
+    <div class="create-post-btn-container">
+        <a href="{% url 'delete-post' post.id %}">
+            <h4 class="add-post-txt">Delete post</h4>
+        </a>
+    </div>
+    {% endif %}
 </div>
 {% empty %}
 {% if request.user == blog.user %}

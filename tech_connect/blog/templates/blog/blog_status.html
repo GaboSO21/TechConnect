@@ -1,0 +1,60 @@
+{% extends 'core/base2.html' %}
+{% load static %}
+
+{% block title %}TechConnect | Blogs Status{% endblock %}
+
+{% block css %}
+<link href="{% static 'core/css/nav.css' %}" rel="stylesheet">
+<link href="{% static 'blog/css/blogStatus.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+{% endblock %}
+
+{% block navbar %}
+{% include 'core/includes/navbar.html' %}
+{% endblock %}
+
+{% block content%}
+<div class="status-container">
+  <div class="st-status-container">
+    <div class="title-container">
+      <h4 class="h4-title">The most used topic in all the blogs</h4>
+    </div>
+
+    <i class="fa-solid fa-award fa-3x"></i>
+    <div class="name-container">
+      <h2 class="h2-name">{{topic.0.NAME}}</h2>
+    </div>
+    <p class="p-txt">
+    This topic was used a total of {{topic.0.CantidadBlogs}} times when people were creating
+      blogs. <span>Were you one of them?</span>
+    </p>
+  </div>
+  <div class="nd-status-container">
+    <div class="title-container">
+      <h4 class="h4-title">The blog with more posts</h4>
+    </div>
+
+    <i class="fa-solid fa-award fa-3x"></i>
+    <div class="name-container">
+      <h2 class="h2-name">{{blog.0.NombreBlog}}</h2>
+    </div>
+    <p class="p-txt">
+    This blog has a total of {{blog.0.CantidadPosts}} posts.
+      <span>Did you follow them all?</span>
+    </p>
+  </div>
+  <div class="rd-status-container">
+    <div class="title-container">
+      <h4 class="h4-title">The post with more comments</h4>
+    </div>
+
+    <i class="fa-solid fa-award fa-3x"></i>
+    <div class="name-container">
+      <h2 class="h2-name">{{post.0.NombrePost}}</h2>
+    </div>
+    <p class="p-txt">
+    This post has a total of {{post.0.Cantidad}} comments. <span>Any from you?</span>
+    </p>
+  </div>
+</div>
+{% endblock %}

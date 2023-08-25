@@ -34,7 +34,7 @@ ORDER BY
  SELECT * FROM TopicsUsadosEnRooms;   
  
  ------------------------vs3
- CREATE OR REPLACE VIEW RoomConMasUsuarios AS
+CREATE OR REPLACE VIEW RoomConMasUsuarios AS
 SELECT
 r."idRoom",
 r."nombre",

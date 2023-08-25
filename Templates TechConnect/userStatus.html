@@ -1,90 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/nav.css" />
-    <link rel="stylesheet" href="./styles/blogStatus.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <title>Blogs Status</title>
-  </head>
-  <body>
-    <nav>
-      <div class="main-info">
-        <a class="title" href="#"><h2>TECHCONNECT</h2></a>
-        <div class="dropdown">
-          <button class="dropbtn"><h4>Blogs</h4></button>
-          <div class="dropdown-content">
-            <a href="allBlogs.html">All Blogs</a>
-            <a href="myBlogs.html">My Blogs</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn"><h4>Rooms</h4></button>
-          <div class="dropdown-content">
-            <a href="allRooms.html">All Rooms</a>
-            <a href="myRooms.html">My Rooms</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn"><h4>The Hottets</h4></button>
-          <div class="dropdown-content">
-            <a href="#">Blogs Status</a>
-            <a href="#">Room Status</a>
-            <a href="#">User Status</a>
-          </div>
-        </div>
-      </div>
-      <div class="user-info">
-        <i class="fa-solid fa-user fa-2x"></i>
-        <i class="fa-solid fa-door-open fa-2x"></i>
-      </div>
-    </nav>
-    <div class="status-container">
-      <div class="st-status-container">
-        <div class="title-container">
-          <h4 class="h4-title">The user with more blogs</h4>
-        </div>
 
-        <i class="fa-solid fa-award fa-3x"></i>
-        <div class="name-container">
-          <h2 class="h2-name">User Name</h2>
-        </div>
-        <p class="p-txt">
-          This user has created a total of # blogs.
-          <span> Are you in any of them?</span>
-        </p>
-      </div>
-      <div class="nd-status-container">
-        <div class="title-container">
-          <h4 class="h4-title">The user with more comments</h4>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/nav.css" />
+  <link rel="stylesheet" href="./styles/blogStatus.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Blogs Status</title>
+</head>
 
-        <i class="fa-solid fa-award fa-3x"></i>
-        <div class="name-container">
-          <h2 class="h2-name">User Name</h2>
+<body>
+  <nav>
+    <div class="main-info">
+      <a class="title" href="#">
+        <h2>TECHCONNECT</h2>
+      </a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <h4>Blogs</h4>
+        </button>
+        <div class="dropdown-content">
+          <a href="allBlogs.html">All Blogs</a>
+          <a href="myBlogs.html">My Blogs</a>
         </div>
-        <p class="p-txt">
-          This user has made a total of # comment.
-          <span>Have you seem any of them?</span>
-        </p>
       </div>
-      <div class="rd-status-container">
-        <div class="title-container">
-          <h4 class="h4-title">The user with more rooms</h4>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <h4>Rooms</h4>
+        </button>
+        <div class="dropdown-content">
+          <a href="allRooms.html">All Rooms</a>
+          <a href="myRooms.html">My Rooms</a>
         </div>
-
-        <i class="fa-solid fa-award fa-3x"></i>
-        <div class="name-container">
-          <h2 class="h2-name">User Name</h2>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <h4>The Hottets</h4>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Blogs Status</a>
+          <a href="#">Room Status</a>
+          <a href="#">User Status</a>
         </div>
-        <p class="p-txt">
-          This user has a total of # rooms. <span>Are you in any of them?</span>
-        </p>
       </div>
     </div>
-  </body>
+    <div class="user-info">
+      <i class="fa-solid fa-user fa-2x"></i>
+      <i class="fa-solid fa-door-open fa-2x"></i>
+    </div>
+  </nav>
+  <div class="status-container">
+    <div class="st-status-container">
+      <div class="title-container">
+        <h4 class="h4-title">The user with more blogs</h4>
+      </div>
+
+      <i class="fa-solid fa-award fa-3x"></i>
+      <div class="name-container">
+        <h2 class="h2-name">User Name</h2>
+      </div>
+      <p class="p-txt">
+        This user has created a total of # blogs.
+        <span> Are you in any of them?</span>
+      </p>
+    </div>
+    <div class="nd-status-container">
+      <div class="title-container">
+        <h4 class="h4-title">The user with more comments</h4>
+      </div>
+
+      <i class="fa-solid fa-award fa-3x"></i>
+      <div class="name-container">
+        <h2 class="h2-name">User Name</h2>
+      </div>
+      <p class="p-txt">
+        This user has made a total of # comment.
+        <span>Have you seem any of them?</span>
+      </p>
+    </div>
+    <div class="rd-status-container">
+      <div class="title-container">
+        <h4 class="h4-title">The user with more rooms</h4>
+      </div>
+
+      <i class="fa-solid fa-award fa-3x"></i>
+      <div class="name-container">
+        <h2 class="h2-name">User Name</h2>
+      </div>
+      <p class="p-txt">
+        This user has a total of # rooms. <span>Are you in any of them?</span>
+      </p>
+    </div>
+  </div>
+</body>
+
 </html>

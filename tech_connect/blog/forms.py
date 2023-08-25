@@ -22,8 +22,8 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['blog', 'name', 'content']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Titulo'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'input-info', 'placeholder': 'Titulo'}),
+            'content': forms.Textarea(attrs={'class': 'input-info'}),
         }
 
 class CommentForm(forms.ModelForm):
